@@ -1,9 +1,9 @@
 # This example has minimal configuration and lets Language Tool do the work to
 # make it look right. (I am not at all affiliated with Language tool, I just
-# found it useful to work with nerd-dictation.)
+# found it useful to work with prism-dictation.)
 #
 # Language Tool is a free service (or local server for the paranoid!) for low
-# request volume and I have added it to my nerd-dictation configuration to
+# request volume and I have added it to my prism-dictation configuration to
 # correct and add punctuation where necessary.  I have found that it makes far,
 # far less manual editing in the result of the spoken text:
 #   https://languagetool.org/
@@ -25,8 +25,8 @@
 #    Rule: UPPERCASE_SENTENCE_START
 #    Rule: I_LOWERCASE
 #
-# nerd-dictation was invoked as follows:
-#    ./nerd-dictation begin --config ./examples/language_tool/nerd-dictation.py
+# prism-dictation was invoked as follows:
+#    ./prism-dictation begin --config ./examples/language_tool/prism-dictation.py
 #
 # I used the Vosk model vosk-model-en-us-0.22-lgraph, but it probably does not
 # matter which model you use.

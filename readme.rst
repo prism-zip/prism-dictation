@@ -1,6 +1,12 @@
 ##############
-Nerd Dictation
+Prism Dictation
 ##############
+
+<center>
+This is a fork of https://github.com/ideasman42/nerd-dictation; the nomenclature change to 
+"prism" is for the prism-archive and related prism-project software, which utilize a standard build and distribution 
+system.
+</center>
 
 *Offline Speech to Text for Desktop Linux.* - See `demo video <https://www.youtube.com/watch?v=T7sR-4DFhpQ>`__.
 
@@ -24,15 +30,15 @@ It is suggested to bind begin/end/cancel to shortcut keys.
 
 .. code-block:: sh
 
-   nerd-dictation begin
+   prism-dictation begin
 
 .. code-block:: sh
 
-   nerd-dictation end
+   prism-dictation end
 
 
 For details on how this can be used, see:
-``nerd-dictation --help`` and ``nerd-dictation begin --help``.
+``prism-dictation --help`` and ``prism-dictation begin --help``.
 
 
 Features
@@ -65,7 +71,7 @@ Suspend/Resume
    While suspended all data is kept in memory and the process is stopped.
    Audio recording is stopped and restarted on resume.
 
-See ``nerd-dictation begin --help`` for details on how to access these options.
+See ``prism-dictation begin --help`` for details on how to access these options.
 
 
 Dependencies
@@ -83,7 +89,7 @@ Audio Recording Utilities
 You may select one of the following tools.
 
 - ``parec`` command for recording from pulse-audio.
-- ``sox`` command as alternative, see the guide: `Using sox with nerd-dictation <readme-sox.rst>`_.
+- ``sox`` command as alternative, see the guide: `Using sox with prism-dictation <readme-sox.rst>`_.
 
 
 Input Simulation Utilities
@@ -93,7 +99,7 @@ You may select one of the following input simulation utilities.
 
 - `xdotool <https://github.com/jordansissel/xdotool>`__ command to simulate input in X11.
 - `ydotool <https://github.com/ReimuNotMoe/ydotool>`__ command to simulate input anywhere (X11/Wayland/TTYs).
-  See the setup guide: `Using ydotool with nerd-dictation <readme-ydotool.rst>`_.
+  See the setup guide: `Using ydotool with prism-dictation <readme-ydotool.rst>`_.
 - `dotool <https://git.sr.ht/~geb/dotool>`__ command to simulate input anywhere (X11/Wayland/TTYs).
 - `wtype <https://github.com/atx/wtype>`__ to simulate input in Wayland".
 
@@ -104,8 +110,8 @@ Install
 .. code-block:: sh
 
    pip3 install vosk
-   git clone https://github.com/ideasman42/nerd-dictation.git
-   cd nerd-dictation
+   git clone https://github.com/ideasman42/prism-dictation.git
+   cd prism-dictation
    wget https://alphacephei.com/kaldi/models/vosk-model-small-en-us-0.15.zip
    unzip vosk-model-small-en-us-0.15.zip
    mv vosk-model-small-en-us-0.15 model
@@ -114,9 +120,9 @@ To test dictation:
 
 .. code-block:: sh
 
-   ./nerd-dictation begin --vosk-model-dir=./model &
+   ./prism-dictation begin --vosk-model-dir=./model &
    # Start speaking.
-   ./nerd-dictation end
+   ./prism-dictation end
 
 
 - Reminder that it's up to you to bind begin/end/cancel to actions you can easily access (typically key shortcuts).
@@ -124,8 +130,8 @@ To test dictation:
 
   .. code-block:: sh
 
-     mkdir -p ~/.config/nerd-dictation
-     mv ./model ~/.config/nerd-dictation
+     mkdir -p ~/.config/prism-dictation
+     mv ./model ~/.config/prism-dictation
 
 .. hint::
 
@@ -143,7 +149,7 @@ This is an example of a trivial configuration file which simply makes the input 
 
 .. code-block:: python
 
-   # ~/.config/nerd-dictation/nerd-dictation.py
+   # ~/.config/prism-dictation/prism-dictation.py
    def nerd_dictation_process(text):
        return text.upper()
 
@@ -163,9 +169,9 @@ Paths
 =====
 
 Local Configuration
-   ``~/.config/nerd-dictation/nerd-dictation.py``
+   ``~/.config/prism-dictation/prism-dictation.py``
 Language Model
-   ``~/.config/nerd-dictation/model``
+   ``~/.config/prism-dictation/model``
 
    Note that ``--vosk-model-dir=PATH`` can be used to override the default.
 
@@ -175,11 +181,11 @@ Command Line Arguments
 
 .. BEGIN HELP TEXT
 
-Output of ``nerd-dictation --help``
+Output of ``prism-dictation --help``
 
 usage::
 
-       nerd-dictation [-h]  ...
+       prism-dictation [-h]  ...
 
 This is a utility that activates speech to text on Linux.
 While it could use any system currently it uses the VOSK-API.
@@ -200,7 +206,7 @@ Subcommand: ``begin``
 
 usage::
 
-       nerd-dictation begin [-h] [--cookie FILE_PATH] [--config FILE]
+       prism-dictation begin [-h] [--cookie FILE_PATH] [--config FILE]
                             [--vosk-model-dir DIR] [--vosk-grammar-file DIR]
                             [--pulse-device-name IDENTIFIER]
                             [--sample-rate HZ] [--defer-output] [--continuous]
@@ -248,7 +254,7 @@ options:
                         this can be useful so "push to talk" setups can be released while you finish speaking
                         (zero disables).
   --suspend-on-start    Start the process and immediately suspend.
-                        Intended for use when nerd-dictation is kept open
+                        Intended for use when prism-dictation is kept open
                         where resume/suspend is used for dictation instead of begin/end.
   --punctuate-from-previous-timeout SECONDS
                         The time-out in seconds for detecting the state of dictation from the previous recording,
@@ -270,7 +276,7 @@ options:
                         - ``PAREC`` (external command, default)
                           See --pulse-device-name option to use a specific pulse-audio device.
                         - ``SOX`` (external command)
-                          For help on setting up sox, see ``readme-sox.rst`` in the nerd-dictation repository.
+                          For help on setting up sox, see ``readme-sox.rst`` in the prism-dictation repository.
   --output OUTPUT_METHOD
                         Method used to at put the result of speech to text.
 
@@ -287,7 +293,7 @@ options:
                         - ``YDOTOOL`` Compatible with all Linux distributions and Wayland but requires some setup.
                         - ``WTYPE`` Compatible with Wayland.
                         - ``STDOUT`` Bare stdout with Ctrl-H for backspaces.
-                          For help on setting up ydotool, see ``readme-ydotool.rst`` in the nerd-dictation repository.
+                          For help on setting up ydotool, see ``readme-ydotool.rst`` in the prism-dictation repository.
   --verbose VERBOSE     Verbosity level, defaults to zero (no output except for errors)
 
                         - Level 1: report top level actions (dictation started, suspended .. etc).
@@ -300,7 +306,7 @@ Subcommand: ``end``
 
 usage::
 
-       nerd-dictation end [-h] [--cookie FILE_PATH]
+       prism-dictation end [-h] [--cookie FILE_PATH]
 
 This ends dictation, causing the text to be typed in.
 
@@ -314,7 +320,7 @@ Subcommand: ``cancel``
 
 usage::
 
-       nerd-dictation cancel [-h] [--cookie FILE_PATH]
+       prism-dictation cancel [-h] [--cookie FILE_PATH]
 
 This cancels dictation.
 
@@ -327,7 +333,7 @@ Subcommand: ``suspend``
 
 usage::
 
-       nerd-dictation suspend [-h] [--cookie FILE_PATH]
+       prism-dictation suspend [-h] [--cookie FILE_PATH]
 
 Suspend recording audio & the dictation process.
 
@@ -343,12 +349,12 @@ Subcommand: ``resume``
 
 usage::
 
-       nerd-dictation resume [-h] [--cookie FILE_PATH]
+       prism-dictation resume [-h] [--cookie FILE_PATH]
 
 Resume recording audio & the dictation process.
 
 This is to be used to resume after the 'suspend' command.
-When nerd-dictation is not suspended, this does nothing.
+When prism-dictation is not suspended, this does nothing.
 
 options:
   -h, --help          show this help message and exit
@@ -372,7 +378,7 @@ Store the result of speech to text as a variable in the shell:
 
 .. code-block:: sh
 
-   SPEECH="$(nerd-dictation begin --timeout=1.0 --output=STDOUT)"
+   SPEECH="$(prism-dictation begin --timeout=1.0 --output=STDOUT)"
 
 
 Example Configurations
@@ -381,15 +387,15 @@ Example Configurations
 These are example configurations you may use as a reference.
 
 - `Word Replacement
-  <https://github.com/ideasman42/nerd-dictation/blob/master/examples/default/nerd-dictation.py>`__.
+  <https://github.com/ideasman42/prism-dictation/blob/master/examples/default/prism-dictation.py>`__.
 - `Start/Finish Commands
-  <https://github.com/ideasman42/nerd-dictation/blob/master/examples/begin_end_commands/nerd-dictation.py>`__.
+  <https://github.com/ideasman42/prism-dictation/blob/master/examples/begin_end_commands/prism-dictation.py>`__.
 
 
 Other Software
 ==============
 
-- `Elograf <https://github.com/papoteur-mga/elograf>`__ - nerd-dictation GUI front-end that runs as a tray icon.
+- `Elograf <https://github.com/papoteur-mga/elograf>`__ - prism-dictation GUI front-end that runs as a tray icon.
 - `Numen <https://numen.johngebbie.com>`__ - voice input for desktop computing that also uses VOSK.
 
 
