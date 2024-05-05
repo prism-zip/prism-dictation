@@ -1,8 +1,8 @@
 #################################
-Using ``sox`` with nerd-dictation
+Using ``sox`` with prism-dictation
 #################################
 
-This guide explains how to configure ``sox`` for recording audio with ``nerd-dictation``.
+This guide explains how to configure ``sox`` for recording audio with ``prism-dictation``.
 
 
 When should I use ``sox``?
@@ -33,8 +33,8 @@ You can test various devices by
 Running nerd dictation with ``sox``
 ===================================
 
-To run ``nerd-dictation`` with ``sox``, use the ``--input`` argument.
+To run ``prism-dictation`` with ``sox``, use the ``--input`` argument.
 
 .. code-block:: sh
 
-   nerd-dictation begin --input=SOX
+   prism-dictation begin --input=SOX

@@ -6,7 +6,7 @@ import subprocess
 import re
 
 BASE_DIR = os.path.join(os.path.dirname(__file__), "..")
-COMMAND_NAME = "nerd-dictation"
+COMMAND_NAME = "prism-dictation"
 
 
 def patch_help_text_all(help_output):

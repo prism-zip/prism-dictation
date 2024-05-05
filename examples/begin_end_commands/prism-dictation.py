@@ -1,4 +1,4 @@
-# User configuration file typically located at `~/.config/nerd-dictation/nerd-dictation.py`
+# User configuration file typically located at `~/.config/prism-dictation/prism-dictation.py`
 
 # This examples shows how explicit start/end commands can be implemented.
 #

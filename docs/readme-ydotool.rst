@@ -1,15 +1,15 @@
 #####################################
-Using ``ydotool`` with nerd-dictation
+Using ``ydotool`` with prism-dictation
 #####################################
 
-This guide explains how to get and configure ``ydotool`` to simulate typing with ``nerd-dictation``,
+This guide explains how to get and configure ``ydotool`` to simulate typing with ``prism-dictation``,
 which brings support for typing on Wayland and languages other than English.
 
 
 When should I use ``ydotool``?
 ==============================
 
-By default, ``nerd-dictation`` uses the ``xdotool`` program to simulate writing with the keyboard.
+By default, ``prism-dictation`` uses the ``xdotool`` program to simulate writing with the keyboard.
 
 This program has two major limitations:
 
@@ -45,7 +45,7 @@ Configuring ``ydotool``
 
 To simulate typing, the program needs access to your ``/dev/uinput`` device.
 By default, this requires root privileges every time you run ``ydotool``,
-so you'd have to enter your password every time you run ``nerd-dictation``.
+so you'd have to enter your password every time you run ``prism-dictation``.
 
 To avoid that, you can give the program permanent access to the input device by adding your username to the ``input``
 user group on your system and giving the group write access to the ``uinput`` device.
@@ -82,8 +82,8 @@ The steps depend on your distribution, so we'll let you look this up.
 Running nerd dictation with ``ydotool``
 =======================================
 
-To run ``nerd-dictation`` with ``ydotool``, use the ``--simulate-input-tool`` argument.
+To run ``prism-dictation`` with ``ydotool``, use the ``--simulate-input-tool`` argument.
 
 .. code-block:: sh
 
-   nerd-dictation begin --simulate-input-tool=YDOTOOL
+   prism-dictation begin --simulate-input-tool=YDOTOOL

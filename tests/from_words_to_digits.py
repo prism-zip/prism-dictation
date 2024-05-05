@@ -6,7 +6,7 @@ Test number to digit conversion.
 """
 
 # TIP: to run tests on file change (on Linux).
-# bash -c 'while true; do inotifywait -e close_write nerd-dictation tests/from_words_to_digits.py ; tests/from_words_to_digits.py ; done'
+# bash -c 'while true; do inotifywait -e close_write prism-dictation tests/from_words_to_digits.py ; tests/from_words_to_digits.py ; done'
 
 import os
 import sys
@@ -218,7 +218,7 @@ class TestNumberWholeAutoDelimit(unittest.TestCase, NumberMixIn):
 if __name__ == "__main__":
     nerd_dictation = execfile_as_module(
         "nerd_dictation",
-        os.path.join(os.path.abspath(os.path.dirname(__file__)), "..", "nerd-dictation"),
+        os.path.join(os.path.abspath(os.path.dirname(__file__)), "..", "prism-dictation"),
     )
 
     unittest.main(verbosity=not VERBOSE)

@@ -33,3 +33,8 @@ Changelog
 - 2021/05/27: Add an ``--output`` flag so text can be printed to the standard output using ``--output=STDOUT``.
   which may be useful for some tasks.
 - 2021/05/27: Ignore arguments after ``-`` (so they can be read by user configuration script).
+
+
+- 2024/05/05: This is a fork of https://github.com/ideasman42/nerd-dictation; the nomenclature change to 
+"prism" is for the prism-archive and related prism-project software, which utilize a standard build and distribution 
+system.

@@ -7,3 +7,4 @@ __pycache__/
 
 # Fallback location used for the language model.
 /model
+/bin_dist

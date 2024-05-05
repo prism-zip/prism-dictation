@@ -1,20 +1,20 @@
-# This example showcases how to use nerd-dictation with a reduced grammar set.
+# This example showcases how to use prism-dictation with a reduced grammar set.
 #
 # A lexicon graph is a feature built into Vosk which allows you to define the
 # words and phrases that will be recognized be the speech engine. By reducing
 # the grammar to a specific set of words or commands, recognition becomes
 # almost 100% accurate.
 #
-# This is the command that I used to invoke nerd-dictation for development and
+# This is the command that I used to invoke prism-dictation for development and
 # testing of the grammar code and this example:
 #
-#  ./nerd-dictation begin   \
+#  ./prism-dictation begin   \
 #      --continuous         \
 #      --numbers-as-digits  \
 #      --numbers-no-suffix  \
-#      --vosk-model-dir     ~/.config/nerd-dictation/vosk-model-en-us-0.22-lgraph/ \
+#      --vosk-model-dir     ~/.config/prism-dictation/vosk-model-en-us-0.22-lgraph/ \
 #      --vosk-grammar-file  ./examples/vosk_grammar/vosk-grammar.json              \
-#      --config             ./examples/vosk_grammar/nerd-dictation.py
+#      --config             ./examples/vosk_grammar/prism-dictation.py
 #
 # = Notes about the files indicated above
 #

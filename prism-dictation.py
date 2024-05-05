@@ -31,11 +31,11 @@ from types import (
     ModuleType,
 )
 
-TEMP_COOKIE_NAME = "nerd-dictation.cookie"
+TEMP_COOKIE_NAME = "prism-dictation.cookie"
 
-USER_CONFIG_DIR = "nerd-dictation"
+USER_CONFIG_DIR = "prism-dictation"
 
-USER_CONFIG = "nerd-dictation.py"
+USER_CONFIG = "prism-dictation.py"
 
 SIMULATE_INPUT_CODE_COMMAND = -1
 
@@ -806,7 +806,7 @@ class from_words_to_digits:
 
 
 def process_text_with_user_config(user_config: ModuleType, text: str) -> str:
-    process_fn_name = "nerd_dictation_process"
+    process_fn_name = "prism_dictation_process"
     process_fn = getattr(user_config, process_fn_name)
     if process_fn is None:
         sys.stderr.write("User configuration %r has no %r function\n" % (user_config, process_fn_name))
@@ -1291,7 +1291,7 @@ def main_begin(
 
     # Find language model in:
     # - `--vosk-model-dir=...`
-    # - `~/.config/nerd-dictation/model`
+    # - `~/.config/prism-dictation/model`
     if not vosk_model_dir:
         vosk_model_dir = calc_user_config_path("model")
         # If this still doesn't exist the error is handled later.
@@ -1497,7 +1497,7 @@ def main_suspend(
 
     if not os.path.exists(path_to_cookie):
         if verbose >= 1:
-            sys.stderr.write("No running nerd-dictation cookie found at: {:s}, abort!\n".format(path_to_cookie))
+            sys.stderr.write("No running prism-dictation cookie found at: {:s}, abort!\n".format(path_to_cookie))
         return
 
     with open(path_to_cookie, "r", encoding="utf-8") as fh:
@@ -1676,7 +1676,7 @@ def argparse_create_begin(subparsers: "argparse._SubParsersAction[argparse.Argum
         action="store_true",
         help=(
             "Start the process and immediately suspend.\n"
-            "Intended for use when nerd-dictation is kept open\n"
+            "Intended for use when prism-dictation is kept open\n"
             "where resume/suspend is used for dictation instead of begin/end."
         ),
         required=False,
@@ -1765,7 +1765,7 @@ def argparse_create_begin(subparsers: "argparse._SubParsersAction[argparse.Argum
             "- ``PAREC`` (external command, default)\n"
             "  See --pulse-device-name option to use a specific pulse-audio device.\n"
             "- ``SOX`` (external command)\n"
-            "  For help on setting up sox, see ``readme-sox.rst`` in the nerd-dictation repository.\n"
+            "  For help on setting up sox, see ``readme-sox.rst`` in the prism-dictation repository.\n"
         ),
         required=False,
     )
@@ -1801,7 +1801,7 @@ def argparse_create_begin(subparsers: "argparse._SubParsersAction[argparse.Argum
             "- ``YDOTOOL`` Compatible with all Linux distributions and Wayland but requires some setup.\n"
             "- ``WTYPE`` Compatible with Wayland.\n"
             "- ``STDOUT`` Bare stdout with Ctrl-H for backspaces.\n"
-            "  For help on setting up ydotool, see ``readme-ydotool.rst`` in the nerd-dictation repository.\n"
+            "  For help on setting up ydotool, see ``readme-ydotool.rst`` in the prism-dictation repository.\n"
         ),
         required=False,
     )
@@ -1927,7 +1927,7 @@ def argparse_create_resume(subparsers: "argparse._SubParsersAction[argparse.Argu
             "Resume recording audio & the dictation process.\n"
             "\n"
             "This is to be used to resume after the 'suspend' command.\n"
-            "When nerd-dictation is not suspended, this does nothing.\n"
+            "When prism-dictation is not suspended, this does nothing.\n"
         ),
         formatter_class=argparse.RawTextHelpFormatter,
     )
