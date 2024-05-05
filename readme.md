@@ -1,4 +1,4 @@
-![Prism Dictation](docs/prism-dictation.png)
+![Prism Dictation](docs/banner.png)
 
 
 
