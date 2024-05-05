@@ -1,4 +1,8 @@
-### Prism Dictation
+![Prism Dictation](docs/prism-dictation.png)
+
+
+
+# Prism Dictation
 
 *** This is a fork of https://github.com/ideasman42/nerd-dictation; the nomenclature change to "prism" is for the prism-archive and related prism-project software, which utilize a standard build and distribution system. ***
 
